@@ -1,0 +1,11 @@
+<div class="content-box">
+    <div  class="col-md-12 row border-bottom">
+      <a  class="nav-link" routerLink="/employees/list" routerLinkActive="active">
+        <mat-icon>assignment_ind</mat-icon>&nbsp;All Employees</a>
+        <span class = "filler"></span>
+      <a *ngIf="_authService.isAdmin()"  class="nav-link" routerLink="/employees/create" routerLinkActive="active">
+        <mat-icon>person_add</mat-icon>&nbsp;
+      </a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>

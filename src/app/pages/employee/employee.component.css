@@ -1,0 +1,9 @@
+.filler {
+    flex: 1 1 auto; 
+ }
+
+ .col-md-12.row.border-bottom {
+    margin: unset;
+    padding: unset;
+    height: 8vh;
+}

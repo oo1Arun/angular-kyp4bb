@@ -1,0 +1,20 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <progress-bar></progress-bar>
+    
+    <app-toolbar></app-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sideNav" [opened]="!open" opened>
+        <app-side-nav></app-side-nav>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+  
+  

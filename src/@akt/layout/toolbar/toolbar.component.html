@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="toggleSidebar()"><mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name">LMS</h1>
+  <span class = "filler"></span>
+  <span>
+      <mat-icon>calendar_today</mat-icon>
+  </span>
+  <span>
+    <div>
+    <button mat-mini-fab [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>&nbsp;
+    </button>
+    
+    <mat-menu #menu="matMenu" class="text-center">
+      <mat-list>
+          <mat-list-item> 
+            <a routerLink="/home/profile" routerLinkActive="active">Profile</a>
+          </mat-list-item>
+        <mat-list-item> 
+          <span class="btn btn-sm btn-danger" (click)="_auth.logout()">Logout</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
+  </div></span>
+</mat-toolbar>
+<div class="margin" ></div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm)" class="mx-auto col-md-6 col-lg-5 offset-md-3 loginform-box">
+    <h4 class="text-center mb-3 login-title"> Sign in </h4>
+    <div *ngIf="!!login_user_msg" [ngClass]="has_error ? 'alert alert-danger': 'alert alert-info'">{{login_user_msg}}</div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-sm-12">
+        <mat-label>Email</mat-label>
+        <input matInput name="username" placeholder="Enter your username" ngModel autofocus minlength="2" required>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-sm-12">
+        <mat-label>Password</mat-label>
+        <input matInput name="password" ngModel placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="row d-flex justify-content-between">
+      <div>
+        <button type="button" class="btn btn-link">Create account</button>
+      </div>
+      <div style="width: 30%;">
+        <button style="width: 100%;" class="btn btn-primary" type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Log in</button>
+      </div>
+    </div>  
+  </form>
+</div>
+
